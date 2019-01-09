@@ -118,7 +118,7 @@ dispatch_block_main_async_safe(^{\
 
 - (void)disConnect:(VPNConnectBlock)block {
     self.status = VPNStatusConnecting;
-    [self executeShellCommand:@"sudo killall pppd" block:^(NSError *err) {
+    [self executeShellCommand:@"sudo killall pppd com.cxy.PPTPVPN.HelpTool" block:^(NSError *err) {
         self.status = VPNStatusDisConnect;
         __SafeMainQueueBlock(block, err);
     }];
