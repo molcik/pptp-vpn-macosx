@@ -11,9 +11,8 @@ PPTP VPN client for Mac OS X
 # Screenshots
 
 
-
-<img src="./screenshots/menu.png" width="20%" />&emsp;&emsp;<img src="./screenshots/setting.png" width="40%" />
-
+<img src="./screenshots/screenshot.png" />
+<img src="./screenshots/menu.png" width="20%" />
 
 
 ## Contribution
