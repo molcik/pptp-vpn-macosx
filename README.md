@@ -1,5 +1,5 @@
 # PPTP VPN for MAC OS X
-pptp vpn client for macos 
+PPTP VPN client for Mac OS X 
 
 
 
