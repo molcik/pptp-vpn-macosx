@@ -9,14 +9,9 @@ PPTP VPN client for Mac OS X
  </br> 
 
 # Screenshots
-
-
 <img src="./screenshots/screenshot.png" />
-<img src="./screenshots/menu.png" width="20%" />
-
 
 ## Contribution
-
 **General**
 
 - You need signing certificate
