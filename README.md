@@ -4,7 +4,7 @@ pptp vpn client for macos
 
 
 # Download: 
-<img src="./screenshots/icon.png" width="25px" height="22px" /> [**PPTPVPN**](https://github.com/molcik/pptp-vpn-macosx/releases/tag/v1.0.1) (https://github.com/molcik/pptp-vpn-macosx/releases)
+<img src="./screenshots/icon.png" width="25px" height="22px" /> [**PPTPVPN**](https://github.com/molcik/pptp-vpn-macosx/releases) (https://github.com/molcik/pptp-vpn-macosx/releases)
 
  </br> 
 
