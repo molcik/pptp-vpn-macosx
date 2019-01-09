@@ -102,7 +102,7 @@ static NSString *const VPNHelperToolLabel = @"com.cxy.PPTPVPN.HelpTool";
 }
 
 - (IBAction)onIssues:(id)sender {
-    NSURL *url = [NSURL URLWithString:@"https://github.com/iHongRen/pptp-vpn"];
+    NSURL *url = [NSURL URLWithString:@"https://github.com/molcik/pptp-vpn-macosx"];
     [[NSWorkspace sharedWorkspace] openURL:url];
 }
 

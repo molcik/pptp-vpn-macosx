@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -54,22 +55,17 @@
             <point key="canvasLocation" x="-126" y="89"/>
         </menu>
         <customView id="RGX-aa-CK2">
-            <rect key="frame" x="0.0" y="0.0" width="126" height="55"/>
+            <rect key="frame" x="0.0" y="0.0" width="126" height="26"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="gwL-XT-rvz" customClass="ITSwitch">
-                    <rect key="frame" x="23" y="8" width="80" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="80" id="09n-y9-LY1"/>
-                        <constraint firstAttribute="height" constant="40" id="bls-sZ-mzA"/>
-                    </constraints>
+                    <rect key="frame" x="21" y="3" width="40" height="20"/>
                     <connections>
                         <action selector="onConnectSwitch:" target="Voe-Tx-rLC" id="xAt-v0-KgE"/>
                     </connections>
                 </customView>
-                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fST-dY-KCC">
-                    <rect key="frame" x="-2" y="20" width="126" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fST-dY-KCC">
+                    <rect key="frame" x="31" y="5" width="65" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Waiting..." id="jWI-Vi-giH">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -78,10 +74,14 @@
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="gwL-XT-rvz" firstAttribute="centerX" secondItem="RGX-aa-CK2" secondAttribute="centerX" id="DVF-xs-lM0"/>
-                <constraint firstItem="gwL-XT-rvz" firstAttribute="centerY" secondItem="RGX-aa-CK2" secondAttribute="centerY" id="myV-xX-lCh"/>
+                <constraint firstAttribute="trailing" secondItem="gwL-XT-rvz" secondAttribute="trailing" constant="65" id="Mbu-9C-eTX"/>
+                <constraint firstItem="fST-dY-KCC" firstAttribute="centerX" secondItem="RGX-aa-CK2" secondAttribute="centerX" id="VOZ-8a-u4d"/>
+                <constraint firstItem="fST-dY-KCC" firstAttribute="centerY" secondItem="RGX-aa-CK2" secondAttribute="centerY" id="ZD0-Zm-1ei"/>
+                <constraint firstItem="gwL-XT-rvz" firstAttribute="top" secondItem="RGX-aa-CK2" secondAttribute="top" constant="3" id="dmd-k6-gow"/>
+                <constraint firstItem="gwL-XT-rvz" firstAttribute="centerY" secondItem="fST-dY-KCC" secondAttribute="centerY" id="jve-1S-M9v"/>
+                <constraint firstItem="gwL-XT-rvz" firstAttribute="leading" secondItem="RGX-aa-CK2" secondAttribute="leading" constant="21" id="qz2-1d-cMJ"/>
             </constraints>
-            <point key="canvasLocation" x="-125" y="262"/>
+            <point key="canvasLocation" x="-125" y="261.5"/>
         </customView>
     </objects>
 </document>
