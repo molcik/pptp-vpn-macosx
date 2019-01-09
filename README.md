@@ -1,11 +1,14 @@
-# pptp-vpn
+# PPTP VPN for MAC OS X
 pptp vpn client for macos 
 
-<img src="./screenshots/icon.png" width="25px" height="22px" /> [**PPTPVPN**](https://github.com/iHongRen/pptp-vpn/releases/tag/v1.0) 是MacOS上的pptp vpn客户端。 [点击下载](https://github.com/iHongRen/pptp-vpn/releases)
+
+
+# Download: 
+<img src="./screenshots/icon.png" width="25px" height="22px" /> [**PPTPVPN**](https://github.com/molcik/pptp-vpn-macosx/releases/tag/v1.0.1) (https://github.com/molcik/pptp-vpn-macosx/releases)
 
  </br> 
 
-**截图（Screenshots）**
+# Screenshots
 
 
 
@@ -13,46 +16,32 @@ pptp vpn client for macos
 
 
 
-
-
-####   
-
- </br> 
-
-## Build & Run
+## Contribution
 
 **General**
 
-- Team 设置为你自己的
-
-- Signing Certificate 设置为 Mac Developer
-
+- You need signing certificate
 
 **Build**
 
-1. 先简单编译一遍.
+1. You need to set Signing for both targets and build product.
 
-2. 打开终端，切换到本工程**SMJobBlessUtil.py**文件所在目录，并执行脚本：
+2. Locate your products and run **SMJobBlessUtil.py** (PPTPVPN.app, PPTPVPN/Info.plist, HelpTool-Info.plist). It should look like this:
 
    ```shell
    $ ./SMJobBlessUtil.py setreq build/Debug/PPTPVPN.app PPTPVPN/Info.plist HelpTool/HelpTool-Info.plist
-   
-   //如果成功，则显示
-   PPTPVPN/Info.plist: updated
+      PPTPVPN/Info.plist: updated
    HelpTool/HelpTool-Info.plist: updated
    ```
 
-   如图：
 
 	<img src="./screenshots/shell.png" width="70%"/>
 
-   如果以上过程中出错请移步**苹果官方Demo**[SMJobBless ReadMe.txt](https://developer.apple.com/library/archive/samplecode/SMJobBless/Listings/ReadMe_txt.html#//apple_ref/doc/uid/DTS40010071-ReadMe_txt-DontLinkElementID_3) (Safari打开).
+   Here is Apple documentation for this script [SMJobBless.py](https://developer.apple.com/library/archive/samplecode/SMJobBless/Listings/ReadMe_txt.html#//apple_ref/doc/uid/DTS40010071-ReadMe_txt-DontLinkElementID_3) (Safari打开).
 
 
-
-####    </br> 
-
-#### 参考:
+#### References:
+[iHongRen/PPTP-VPN](https://github.com/iHongRen/pptp-vpn)
 
 [Apple SMJobBless](https://developer.apple.com/library/archive/samplecode/SMJobBless/Introduction/Intro.html)
 
@@ -62,10 +51,4 @@ pptp vpn client for macos
 
 [Execute a terminal command from a Cocoa app](https://stackoverflow.com/questions/412562/execute-a-terminal-command-from-a-cocoa-app/412573#412573)
 
- [AlonsoZhang/PPTP](https://github.com/AlonsoZhang/PPTP)
-
-####    </br> 
-
-
-
-### [打赏 (Donation)](https://github.com/iHongRen/Donation/blob/master/Donation.md)
+[AlonsoZhang/PPTP](https://github.com/AlonsoZhang/PPTP)
