@@ -4,7 +4,7 @@ PPTP VPN client for Mac OS X
 
 
 # Download: 
-<img src="./screenshots/icon.png" width="25px" height="22px" /> [**PPTPVPN**](https://github.com/molcik/pptp-vpn-macosx/releases) (https://github.com/molcik/pptp-vpn-macosx/releases)
+<img src="./screenshots/icon.png" width="25px" height="22px" /> [**PPTPVPN**](https://filipmolcik.com/pptp-vpn-on-macos-sierra-and-high-sierra/) (https://filipmolcik.com/pptp-vpn-on-macos-sierra-and-high-sierra/)
 
  </br> 
 
