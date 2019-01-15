@@ -23,5 +23,6 @@ extern NSString *const PPTPVPNLogFile;
 + (void)writeVPNFileHost:(NSString*)remoteaddress
                     user:(NSString*)user
                 password:(NSString*)password
+                    mmpe:(int)mmpe
                    block:(void(^)(NSError *error))complete;
 @end

@@ -10,8 +10,8 @@
 #import "VPNManager.h"
 
 NSString *const PPTPVPNFileDirectory = @"/etc/ppp/peers";
-NSString *const PPTPVPNConfigFileName = @"this_is_a_pptp_vpn_config_file_0";
-NSString *const PPTPVPNLogFile = @"/tmp/pptp_vpn_log.txt";;
+NSString *const PPTPVPNConfigFileName = @"pptp_vpn_config_file";
+NSString *const PPTPVPNLogFile = @"/tmp/pptp_vpn_log.txt";
 
 @implementation VPNFiler
 
@@ -30,6 +30,7 @@ NSString *const PPTPVPNLogFile = @"/tmp/pptp_vpn_log.txt";;
 + (void)writeVPNFileHost:(NSString*)remoteaddress
                     user:(NSString*)user
                 password:(NSString*)password
+                    mmpe:(int)mmpe
                    block:(void(^)(NSError *error))complete {
     
     NSString *cmd = [NSString stringWithFormat:@"sudo mkdir -p -m=rwx %@", PPTPVPNFileDirectory];
@@ -39,8 +40,9 @@ NSString *const PPTPVPNLogFile = @"/tmp/pptp_vpn_log.txt";;
             NSString *_user = [NSString stringWithFormat:@"user \"%@\"\n",user?:@""];
             NSString *_password = [NSString stringWithFormat:@"password \"%@\"\n",password?:@""];
             NSString *logfile = [NSString stringWithFormat:@"logfile %@\n", PPTPVPNLogFile];
-            NSString *vpnConfig = [NSString stringWithFormat:@"%@%@%@%@",_remoteaddress,_user,_password, logfile];
-            
+            NSString *_mmpe = mmpe ? @"require-mppe-128\n" : @"" ;
+            NSString *vpnConfig = [NSString stringWithFormat:@"%@%@%@%@%@",_remoteaddress,_user,_password, _mmpe, logfile];
+
             NSString *scriptFile = [vpnConfig stringByAppendingString:[self VPNFileOtherScript]];
         
             NSString *cmdx = [NSString stringWithFormat:@"echo \"%@\" > %@",scriptFile, [self VPNFilePath]];
@@ -66,9 +68,6 @@ receive-all\n\
 novj 0:0\n\
 ipcp-accept-local\n\
 ipcp-accept-remote\n\
-refuse-eap\n\
-refuse-pap\n\
-refuse-chap-md5\n\
 hide-password\n\
 looplocal\n\
 nodetach\n\

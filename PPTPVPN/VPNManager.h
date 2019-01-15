@@ -22,7 +22,7 @@ typedef void (^VPNConnectChangedBlock)(VPNStatus status);
 @property (nonatomic, copy) NSString *host;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *password;
-
+@property (nonatomic) int mmpe;
 
 @property (nonatomic, assign) VPNStatus status;
 + (instancetype)shared;

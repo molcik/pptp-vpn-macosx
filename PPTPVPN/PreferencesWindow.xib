@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="errorTip" destination="THs-S4-SfF" id="RIo-D5-AIP"/>
                 <outlet property="host" destination="din-eR-QaL" id="hOp-wv-Jze"/>
+                <outlet property="mmpe" destination="saK-rH-auS" id="bwE-Jp-ipA"/>
                 <outlet property="password" destination="f4p-wr-dgy" id="ukB-Zl-KUx"/>
                 <outlet property="username" destination="cs9-yU-tTg" id="h3Y-n7-Yke"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -20,14 +21,14 @@
         <window title="Setting" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="740" y="350" width="295" height="171"/>
+            <rect key="contentRect" x="740" y="350" width="295" height="180"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="295" height="171"/>
+                <rect key="frame" x="0.0" y="0.0" width="295" height="180"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="din-eR-QaL">
-                        <rect key="frame" x="113" y="122" width="162" height="22"/>
+                    <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="din-eR-QaL">
+                        <rect key="frame" x="113" y="131" width="162" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="vpn.servername.com" drawsBackground="YES" id="BZ6-ZQ-RN4">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -35,7 +36,7 @@
                         </textFieldCell>
                     </textField>
                     <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f4p-wr-dgy">
-                        <rect key="frame" x="113" y="64" width="162" height="22"/>
+                        <rect key="frame" x="113" y="73" width="162" height="22"/>
                         <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="*****" drawsBackground="YES" usesSingleLineMode="YES" id="GoG-GJ-2du">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -46,7 +47,7 @@
                         </secureTextFieldCell>
                     </secureTextField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cs9-yU-tTg">
-                        <rect key="frame" x="113" y="93" width="162" height="22"/>
+                        <rect key="frame" x="113" y="102" width="162" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="name" drawsBackground="YES" id="3jt-fL-H8F">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -54,7 +55,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aH8-7Q-Rza">
-                        <rect key="frame" x="38" y="95" width="68" height="17"/>
+                        <rect key="frame" x="38" y="104" width="68" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="username:" id="XDS-SK-Yrb">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -62,7 +63,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jw8-vd-xZV">
-                        <rect key="frame" x="40" y="66" width="66" height="17"/>
+                        <rect key="frame" x="40" y="75" width="66" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="password:" id="q9f-q0-KIA">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -70,7 +71,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vgp-ct-RJj">
-                        <rect key="frame" x="189" y="8" width="92" height="32"/>
+                        <rect key="frame" x="189" y="7" width="92" height="32"/>
                         <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="huC-MG-JaU">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -83,7 +84,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="viC-VX-bfP">
-                        <rect key="frame" x="14" y="8" width="92" height="32"/>
+                        <rect key="frame" x="14" y="7" width="92" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="R82-uO-hJW"/>
                         </constraints>
@@ -98,8 +99,8 @@ Gw
                             <action selector="performClose:" target="-1" id="uxb-6j-cQH"/>
                         </connections>
                     </button>
-                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="THs-S4-SfF">
-                        <rect key="frame" x="6" y="2" width="283" height="17"/>
+                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="THs-S4-SfF">
+                        <rect key="frame" x="6" y="1" width="283" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="err" id="6tU-bp-UI6">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
@@ -107,13 +108,21 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAN-Nh-8ES">
-                        <rect key="frame" x="71" y="124" width="35" height="17"/>
+                        <rect key="frame" x="71" y="133" width="35" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="host:" id="3do-tz-n4v">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saK-rH-auS">
+                        <rect key="frame" x="111" y="48" width="61" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="MMPE" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Gfl-y8-xBj">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="THs-S4-SfF" firstAttribute="centerX" secondItem="se5-gp-TjO" secondAttribute="centerX" id="4Eq-E9-nX7"/>
@@ -144,7 +153,7 @@ Gw
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-999" y="88"/>
+            <point key="canvasLocation" x="-999.5" y="90"/>
         </window>
     </objects>
 </document>

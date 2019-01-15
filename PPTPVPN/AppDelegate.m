@@ -94,7 +94,7 @@ static NSString *const VPNHelperToolLabel = @"com.cxy.PPTPVPN.HelpTool";
     if (!self.preferencesWindow) {
         self.preferencesWindow = [[PreferencesWindow alloc] initWithWindowNibName:@"PreferencesWindow"];
     }
-    [self.preferencesWindow showWindow:self];
+    [[self.preferencesWindow window] orderFrontRegardless];
 }
 
 - (IBAction)openLog:(id)sender {

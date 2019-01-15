@@ -16,6 +16,7 @@
 @property (weak) IBOutlet NSTextField *username;
 @property (weak) IBOutlet NSSecureTextField *password;
 @property (weak) IBOutlet NSTextField *errorTip;
+@property (weak) IBOutlet NSButton *mmpe;
 
 @end
 
@@ -23,13 +24,12 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    [NSApp activateIgnoringOtherApps:YES];
-    [self.window makeKeyAndOrderFront:self];
     
     [self.host becomeFirstResponder];
     self.host.stringValue = [VPNManager shared].host;
-    self.username.stringValue = [VPNManager shared].username;;
-    self.password.stringValue = [VPNManager shared].password;;
+    self.username.stringValue = [VPNManager shared].username;
+    self.password.stringValue = [VPNManager shared].password;
+    self.mmpe.intValue = [VPNManager shared].mmpe;
 }
 
 - (IBAction)confirmClick:(id)sender {
@@ -37,8 +37,9 @@
     shared.host = self.host.stringValue;
     shared.username = self.username.stringValue;
     shared.password = self.password.stringValue;
+    shared.mmpe = self.mmpe.intValue;
     
-    [VPNFiler writeVPNFileHost:shared.host user:shared.username password:shared.password block:^(NSError *error) {      
+    [VPNFiler writeVPNFileHost:shared.host user:shared.username password:shared.password mmpe:shared.mmpe block:^(NSError *error) {
         if (error) {
             self.errorTip.hidden = NO;
             self.errorTip.stringValue = error.localizedDescription?:@"";

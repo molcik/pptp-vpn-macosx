@@ -56,6 +56,8 @@ dispatch_block_main_async_safe(^{\
     
     NSString *storedPassword = [[NSUserDefaults standardUserDefaults] objectForKey:@"pptp.vpn.password"]?:@"";
     self.password = storedPassword.length ? [storedPassword substringFromIndex:1] : @"";
+    NSNumber *storedMmpe = [[NSUserDefaults standardUserDefaults] objectForKey:@"pptp.vpn.mmpe"]?:[NSNumber numberWithInt:1];
+    self.mmpe = storedMmpe.intValue;
     
     self.status = VPNStatusDisConnect;
 }
@@ -76,6 +78,12 @@ dispatch_block_main_async_safe(^{\
     [[NSUserDefaults standardUserDefaults] setObject:storePassword forKey:@"pptp.vpn.password"];
 }
 
+- (void)setMmpe:(int)mmpe {
+    _mmpe = mmpe;
+    NSNumber *storeMmpe = [NSNumber numberWithInt: mmpe];
+    [[NSUserDefaults standardUserDefaults] setObject:storeMmpe forKey:@"pptp.vpn.mmpe"];
+}
+
 - (void)setStatus:(VPNStatus)status {
     _status = status;
     __SafeMainQueueBlock(self.connectChangedBlock, status);
@@ -85,7 +93,7 @@ dispatch_block_main_async_safe(^{\
     if (![[NSFileManager defaultManager] fileExistsAtPath:[VPNFiler VPNFilePath]]) {
         NSError *err = [NSError errorWithDomain:NSPOSIXErrorDomain
                                            code:-2
-                                       userInfo:@{NSLocalizedDescriptionKey: @"请正确填写VPN账号"}];
+                                       userInfo:@{NSLocalizedDescriptionKey: @"Check you VPN details"}];
         self.status = VPNStatusDisConnect;
         __SafeMainQueueBlock(block, err);
         return;
@@ -186,7 +194,7 @@ dispatch_block_main_async_safe(^{\
                 if (reply == 0) {
                     __SafeMainQueueBlock(block, nil);
                 } else {
-                    NSError *erro = [self createError:[NSString stringWithFormat:@"%@执行失败",cmd]];
+                    NSError *erro = [self createError:[NSString stringWithFormat:@"%@Run failed",cmd]];
                     __SafeMainQueueBlock(block, erro);
                 }
             }];
@@ -198,11 +206,13 @@ dispatch_block_main_async_safe(^{\
 - (void)executeShellCommand:(NSString*)cmd block:(VPNConnectBlock)block {
     [self connectAndexecuteCommandBlock:^(NSError *err) {
         if (err) {
+            NSLog(@"%@",err);
             [self logErrorIfExist:err];
             __SafeMainQueueBlock(block, err);
         } else {
             [[self.helperToolConnection remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
                 if (error) {
+                    NSLog(@"%@",error);
                     [self logErrorIfExist:error];
                     __SafeMainQueueBlock(block, error);
                 }
@@ -210,7 +220,7 @@ dispatch_block_main_async_safe(^{\
                 NSError *erro = nil;
                 if (errorInfo) {
                     NSLog(@"%@",errorInfo);
-                    erro = [self createError:[NSString stringWithFormat:@"%@执行失败",cmd]];
+                    erro = [self createError:[NSString stringWithFormat:@"%@Run failed",cmd]];
                     [self logErrorIfExist:erro];
                 }
                 __SafeMainQueueBlock(block, erro);
@@ -227,6 +237,7 @@ dispatch_block_main_async_safe(^{\
         } else {
             [[self.helperToolConnection remoteObjectProxyWithErrorHandler:^(NSError * _Nonnull errorx) {
                 if (errorx) {
+                    NSLog(@"output: %@", errorx);
                     [self logErrorIfExist:errorx];
                     __SafeMainQueueBlock(block, errorx, nil);
                 }
